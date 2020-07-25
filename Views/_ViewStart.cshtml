@@ -1,0 +1,13 @@
+﻿@using System.Text.RegularExpressions;
+@{
+    var adminURL = new Regex("^.*[\\\\\\/]{1}admin.*$");
+    bool isAdmin= adminURL.IsMatch(Context.Request.Path.Value.ToLower());
+    if(isAdmin)
+    {
+        Layout = "~/Views/Admin/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}

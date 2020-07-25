@@ -1,0 +1,14 @@
+﻿@model CMS.Controllers.LoginModel
+@{
+    ViewData["Title"] = "Admin login";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Enter your username and password</p>
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    Username: <input asp-for="Username" value="username" /><br />
+    Password: <input asp-for="Password" value="password" /><br />
+    <input type="submit" value="Login" />
+    @Html.AntiForgeryToken()
+</form>

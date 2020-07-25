@@ -1,0 +1,66 @@
+﻿@model CMS.DataAccess.Paragraph
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Paragraph</h4>
+<hr />
+<div class="row">
+    <div class="col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PageId" class="control-label"></label>
+                <select asp-for="PageId" class="form-control" asp-items="ViewBag.PageId"></select>
+                <span asp-validation-for="PageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisplayOrder" class="control-label"></label>
+                <input asp-for="DisplayOrder" class="form-control" />
+                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details" class="control-label"></label>
+                <input asp-for="Details" class="form-control" />
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input id="submit" type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+        window.onload=function(){
+            ClassicEditor
+                .create(document.querySelector('#Details'), {
+                    toolbar: [ 'Source','heading', '|', 'bold', 'italic', 'link' ]
+                })
+                .then(editor => {
+                    window.editor = editor;
+                    editor.setData(document.querySelector("#Details").value);
+                })
+                .catch(err => {
+                    console.error(err.stack);
+                });
+
+            document.querySelector('#submit').addEventListener("click",() => {
+                console.log("Submiting data....");
+                document.querySelector('#Details').value = editor.getData();
+                console.log("Data " + editor.getData());
+            });
+        }
+</script>
