@@ -1,20 +1,18 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Simple CMS site, each and every words displayed on website is configuration or dynamic data
+/admin is configuration console
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Visual Studio 2019 - .Net core 3.0
+SQLite database
+Put logo of the website and other inside images folder under wwwroot
+
 
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Visual studio build and publish
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+Private code and not to be used in any commercial application
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# Author
+Chetan Patel
